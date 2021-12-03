@@ -1,0 +1,20 @@
+#병원정보서비스(2021)
+
+setwd("C:/Users/siyul/Desktop/data")
+clinic <- read.csv("병원정보서비스(2021).csv",header=TRUE)
+#sum(is.na(clinic))
+
+level <- clinic$종별코드
+nlevel <- clinic$종별코드명
+city <- clinic$시도코드명
+x <- clinic$x 
+y <- clinic$y
+
+dat_c <- data.frame(city,x,y,level)
+is.na(dat_c)
+sum(is.na(dat_c)) #결측값 총량 확인
+
+dat_c <- na.omit(dat_c) #na.omit:결측갑 제거 
+str(dat_c)
+dat_c
+sum(is.na(dat_c)) #결측값 총량 확인
